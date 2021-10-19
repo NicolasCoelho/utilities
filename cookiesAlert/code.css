@@ -1,0 +1,52 @@
+:root {
+    --cookie-bg: #ededed;
+    --cookie-primary-button: #cd3b3b;
+    --cookie-font: 'Open Sans', sans-serif;
+    --cookie-font-size: 14px;
+}
+.cookie-container {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+}
+.cookie-container .cookie-alert {
+    max-width: 900px;
+    display: flex;
+    align-items: center;
+    font-size: var(--cookie-font-size);
+    justify-content: space-between;
+    padding: 15px 30px;
+    border-radius: 5px;
+    align-items: center;
+    margin: auto;
+    background-color: var(--cookie-bg);
+}
+.cookie-container .cookie-alert p {
+    margin: 0;
+    padding: 5px;
+    font-family: var(--cookie-font);
+}
+.cookie-container .cookie-alert button {
+    border: none;
+    background: var(--cookie-primary-button);
+    padding: 7px 15px;
+    color: #fff;
+    border-radius: 5px;
+    font-family: var(--cookie-font);
+    font-weight: bold;
+}
+.cookie-container .cookie-alert button:hover {
+    cursor: pointer;
+}
+@media(max-width: 992px) {
+    .cookie-container .cookie-alert {
+        flex-direction: column;
+        text-align: justify;
+    }
+    .cookie-container .cookie-alert button {
+        margin-top: 15px;
+    }
+}
