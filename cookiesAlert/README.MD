@@ -2,4 +2,4 @@
 Cookies message in pop-up
 
 ## Example
-![Cookies alert example](/example.png)
+![Cookies alert example](/cookiesAlert/example.png)
