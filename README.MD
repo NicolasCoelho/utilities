@@ -1,6 +1,6 @@
 # Code utilities
 Utilities to reuse on your code
 
-###### [Cookies Alert](cookies)
+###### [Cookies Alert](https://github.com/NicolasCoelho/utilities/tree/master/cookiesAlert)
 
-###### [Line Title](lineTitle)
+###### [Line Title](https://github.com/NicolasCoelho/utilities/tree/master/lineTitle)
