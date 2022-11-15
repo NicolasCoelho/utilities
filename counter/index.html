@@ -1,0 +1,56 @@
+<template id="sessionTimer">
+	<div class="timerBox">
+		<span class="label">Sua sessão expira em:</span>
+		<br/>
+		<time class="timer">20:00</time>
+	</div>
+</template>
+<script>
+(function(){
+	
+	setTemplate();
+	setClock();
+	
+	function setTemplate() {
+		var timerBox = $("#sessionTimer").html();
+		$("#summary > div").append(timerBox);
+	}
+	
+	function setClock() {
+		var sessionLimitTime = 20 * 60 * 1000;
+		var minute = 1000;
+		var sessionTime = 0;
+		var timer = document.querySelector(".timerBox time");
+		var initialSession = new Date(sessionLimitTime).getTime();
+
+
+		var interval = setInterval(() => {
+			sessionTime += minute
+			var newTime = initialSession - sessionTime;
+
+			var newDate = new Date(newTime);
+
+			if(sessionTime >= sessionLimitTime) {
+				clearInterval(interval);
+				return;
+			}
+			updateClock(newDate);
+		}, 1000);
+	}
+	
+	function updateClock(newTime) {
+		var timer = newTime.toISOString().slice(14, 19);
+		timer.innerHTML = timer;
+	}
+})();
+</script>
+<style>
+.timerBox {
+	text-align: center;
+	padding-bottom: 10px;
+}
+	.timerBox .timer {
+		font-size: 20px;
+		color: var(--color-success);
+	}
+</style>
